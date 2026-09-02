@@ -52,7 +52,6 @@ def myPow(x: float, n: int) -> float:
             result *= x
 
         x *= x
-2
         n //= 2
 
     return result
