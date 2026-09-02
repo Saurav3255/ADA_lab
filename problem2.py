@@ -1,6 +1,14 @@
-#Design a Sort class containing merge_sort(arr: List[int]) -> List[int] and quick_sort(arr:
-List[int]) -> List[int] methods that accept an unsorted integer array and return the sorted
-array.
+"""
+Program: Merge Sort and Quick Sort
+Author: Saurav 241492
+
+Description:
+Implements Merge Sort and Quick Sort algorithms.
+
+Input: List of integers.
+Output: Sorted list using Merge Sort and Quick Sort.
+"""
+
 from typing import List
 
 
@@ -20,6 +28,7 @@ class Sort:
         result = []
         i = j = 0
 
+        # Merge two sorted lists
         while i < len(left) and j < len(right):
             if left[i] <= right[j]:
                 result.append(left[i])
@@ -38,6 +47,7 @@ class Sort:
         if len(arr) <= 1:
             return arr.copy()
 
+        # Select middle element as pivot
         pivot = arr[len(arr) // 2]
 
         left = [x for x in arr if x < pivot]
@@ -56,5 +66,5 @@ sorter = Sort()
 
 arr = [5, 2, 8, 1, 3]
 
-print(sorter.merge_sort(arr))  # [1, 2, 3, 5, 8]
-print(sorter.quick_sort(arr))  # [1, 2, 3, 5, 8]
+print("merge sort :", sorter.merge_sort(arr))  # [1, 2, 3, 5, 8]
+print("Quick sort :", sorter.quick_sort(arr))  # [1, 2, 3, 5, 8]
